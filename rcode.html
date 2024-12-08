@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Code - Jeong Eun Cheon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1.title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            color: black;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            padding: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .nav-link {
+            text-decoration: none;
+            font-size: 15px;
+            color: white;
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        footer .icon {
+            margin: 0 10px;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        footer .icon:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- R Code Content -->
+    <div class="content-container">
+        <h1 class="title">R Code Resources</h1>
+        <p>Below are links to various R scripts and resources that I have shared as part of my teaching and research:</p>
+
+        <ul>
+            <li><a href="https://rpubs.com/cheonje/Rbasics" target="_blank">R Basics</a></li>
+            <li><a href="https://rpubs.com/cheonje/mediation" target="_blank">Mediation</a></li>
+            <li><a href="https://rpubs.com/cheonje/moderation" target="_blank">Moderation</a></li>
+            <li><a href="https://rpubs.com/cheonje/APIM" target="_blank">APIM & APIMeM (SEM)</a></li>
+            <li><a href="https://rpubs.com/cheonje/APIMmoderationreplication" target="_blank">Moderation in APIM (Replication Exercise - SEM)</a></li>
+            <li><a href="https://rpubs.com/cheonje/DRSA" target="_blank">Dyadic Response Surface Analysis (Replication Exercise - SEM)</a></li>
+            <li><a href="https://rpubs.com/cheonje/mlmbasics" target="_blank">Multilevel Modeling Basics</a></li>
+            <li><a href="https://rpubs.com/cheonje/Two-InterceptvsInteraction" target="_blank">Two-Intercept Model vs. Interaction Model</a></li>
+            <li><a href="https://rpubs.com/cheonje/APIMModMLM" target="_blank">Moderation in APIM (Replication Exercise - MLM)</a></li>
+        </ul>
+
+        <p>If you have any questions or would like further guidance on these scripts, please feel free to <a href="Contact.html">contact me</a>.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <a href="https://github.com/cheon-je" target="_blank" class="fab fa-github icon"></a>
+            <a href="https://osf.io/daeg2/" target="_blank" class="ai ai-osf icon"></a>
+            <a href="https://www.researchgate.net/profile/Jeong-Eun-Cheon" target="_blank" class="fab fa-researchgate icon"></a>
+            <a href="https://rpubs.com/cheonje" target="_blank" class="fas fa-book icon"></a>
+            <a href="https://scholar.google.com/citations?user=AfNzaYEAAAAJ&hl=en&oi=ao" target="_blank" class="ai ai-google-scholar icon"></a>
+        </p>
+        <p>&copy; 2024 Jeong Eun Cheon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load Navbar from external file
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+
+</html>

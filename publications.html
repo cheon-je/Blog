@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Jeong Eun Cheon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1.title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            color: black;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            padding: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .nav-link {
+            text-decoration: none;
+            font-size: 15px;
+            color: white;
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            border-top: 1px solid #ddd;
+        }
+
+        footer .icon {
+            margin: 0 10px;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        footer .icon:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Research Content -->
+    <div class="content-container">
+        <h1 class="title">Publications</h1>
+        <p><strong>Research Interest:</strong> marriage, close relationships, interpersonal relationships, motivation, perception, sexuality, attachment, personality</p>
+        <p>What are the key predictors of relationship satisfaction? What factors shape individuals’ experiences in their relationships? To address these questions, I have been exploring various <strong>dyadic models</strong>, specifically utilizing ratings from both partners to understand how these assessments impact their marital and overall life satisfaction.</p>
+        <p>For instance, my findings reveal that an individual’s life satisfaction is predominantly shaped by their own marital satisfaction, rather than by their partner’s marital satisfaction or discrepancies between their own and their partner’s marital satisfaction levels. This challenges the widely held belief that a partner’s satisfaction plays a significant role in determining an individual’s overall well-being.</p>
+        <p>Another area of investigation focuses on the <em>totality model</em>, which evaluates the combined scores of both partners to predict overall well-being. My research suggests that a couple’s combined neuroticism score is associated with lower marital satisfaction, highlighting how <strong>personality traits</strong> can function at the couple level to collectively influence well-being.</p>
+        <p>Currently, I am investigating the differential impacts of factors such as <strong>attachment styles</strong>, <strong>sexual desire</strong>, <strong>agency</strong>, and <strong>communion</strong> on how individuals evaluate their relationships. I aim to extend this research beyond intimate relationships to explore broader relational dynamics, offering insights into the complexities of human connection. Through this work, I seek to contribute to a deeper understanding of how relationships influence well-being across diverse contexts.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <a href="https://github.com/cheon-je" target="_blank" class="fab fa-github icon"></a>
+            <a href="https://osf.io/daeg2/" target="_blank" class="ai ai-osf icon"></a>
+            <a href="https://www.researchgate.net/profile/Jeong-Eun-Cheon" target="_blank" class="fab fa-researchgate icon"></a>
+            <a href="https://rpubs.com/cheonje" target="_blank" class="fas fa-book icon"></a>
+            <a href="https://scholar.google.com/citations?user=AfNzaYEAAAAJ&hl=en&oi=ao" target="_blank" class="ai ai-google-scholar icon"></a>
+        </p>
+        <p>&copy; 2024 Jeong Eun Cheon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load Navbar from external file
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+
+</html>
