@@ -29,15 +29,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #111827;
+            background-color: black;
             padding: 15px 0;
+            border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar .nav-link {
             text-decoration: none;
-            font-size: 16px;
-            color: #f9fafb;
+            font-size: 15px;
+            color: white;
             margin: 0 20px;
             padding: 10px 15px;
             border-radius: 5px;
@@ -45,8 +46,8 @@
         }
 
         .navbar .nav-link:hover {
-            color: #111827;
-            background-color: #f9fafb;
+            color: black;
+            background-color: white;
         }
 
         .content-container {
@@ -106,14 +107,7 @@
 
 <body>
     <!-- Navbar -->
-    <div class="navbar">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="research.html" class="nav-link">Research</a>
-        <a href="publications.html" class="nav-link">Publications</a>
-        <a href="rcode.html" class="nav-link">R Code</a>
-        <a href="cv.html" class="nav-link">CV</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </div>
+    <div id="navbar-container"></div>
 
     <!-- Publications Content -->
     <div class="content-container">

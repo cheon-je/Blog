@@ -58,14 +58,11 @@
         }
 
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             text-align: center;
-            background-color: #f8f9fa;
-            padding: 15px 0;
-            border-top: 1px solid #ddd;
+            background-color: #111827;
+            color: #f9fafb;
+            padding: 20px 0;
+            margin-top: 40px;
         }
 
         footer .icon {
@@ -78,48 +75,82 @@
             color: #007bff;
         }
 
-        .contact-details {
-            text-align: center;
-            margin: 40px auto;
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .contact-details a {
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .contact-item a {
             color: #007bff;
             text-decoration: none;
+            font-size: 16px;
         }
 
-        .contact-details a:hover {
+        .contact-item a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div id="navbar-container"></div>
+     <!-- Navbar -->
+     <div id="navbar-container"></div>
 
-    <!-- Contact Content -->
+      <!-- Contact Content -->
     <div class="content-container">
         <h1 class="title">Contact Me</h1>
         <div class="contact-details">
-            <p><strong>Email:</strong></p>
-            <p><a href="mailto:jeongeuncheon3@gmail.com">jeongeuncheon3@gmail.com</a></p>
-            <p><a href="mailto:cheonje@yonsei.ac.kr">cheonje@yonsei.ac.kr</a></p>
-
-            <p><strong>Google Scholar:</strong></p>
-            <p><a href="https://scholar.google.com/citations?user=AfNzaYEAAAAJ&hl=en&oi=ao" target="_blank">Jeong Eun Cheon - Google Scholar</a></p>
-
-            <p><strong>GitHub:</strong></p>
-            <p><a href="https://github.com/cheon-je" target="_blank">https://github.com/cheon-je</a></p>
-
-            <p><strong>ResearchGate:</strong></p>
-            <p><a href="https://www.researchgate.net/profile/Jeong-Eun-Cheon" target="_blank">Jeong Eun Cheon - ResearchGate</a></p>
-
-            <p><strong>RPubs:</strong></p>
-            <p><a href="https://rpubs.com/cheonje" target="_blank">https://rpubs.com/cheonje</a></p>
-
-            <p><strong>OSF:</strong></p>
-            <p><a href="https://osf.io/daeg2/" target="_blank">https://osf.io/daeg2/</a></p>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:jeongeuncheon3@gmail.com">jeongeuncheon3@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:cheonje@yonsei.ac.kr">cheonje@yonsei.ac.kr</a>
+            </div>
+            <div class="contact-item">
+                <i class="ai ai-google-scholar"></i>
+                <a href="https://scholar.google.com/citations?user=AfNzaYEAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/cheon-je" target="_blank">GitHub Profile</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-researchgate"></i>
+                <a href="https://www.researchgate.net/profile/Jeong-Eun-Cheon" target="_blank">ResearchGate Profile</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-book"></i>
+                <a href="https://rpubs.com/cheonje" target="_blank">RPubs Profile</a>
+            </div>
+            <div class="contact-item">
+                <i class="ai ai-osf"></i>
+                <a href="https://osf.io/daeg2/" target="_blank">OSF Profile</a>
+            </div>
         </div>
     </div>
 
