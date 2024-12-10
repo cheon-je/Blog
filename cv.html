@@ -153,26 +153,27 @@
     </div>
 
     <script>
-        const pdfUrl = 'files/CV_Cheon_241208.pdf';
+        const url = 'files/CV_Cheon_241208.pdf'; // Path to your PDF file
+        const container = document.getElementById('pdf-container');
     
-        const renderPDF = async () => {
-            const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
-            const container = document.getElementById('pdf-container');
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
     
-            for (let i = 1; i <= pdf.numPages; i++) {
-                const page = await pdf.getPage(i);
-                const viewport = page.getViewport({ scale: 1 });
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                container.appendChild(canvas);
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
     
-                await page.render({ canvasContext: context, viewport }).promise;
+        pdfjsLib.getDocument(url).promise.then(function (pdf) {
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                pdf.getPage(pageNum).then(function (page) {
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+    
+                    page.render({ canvasContext: context, viewport: viewport });
+                    container.appendChild(canvas);
+                });
             }
-        };
-    
-        renderPDF();
+        });
     </script>
 
     <!-- Footer -->
