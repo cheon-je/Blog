@@ -55,13 +55,25 @@
         .pdf-container {
             text-align: center;
             margin: 40px auto;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
 
         .pdf-viewer {
-            width: 100%;
-            height: 600px;
+            width: 80%;
+            height: 800px;
             border: 1px solid #ddd;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .download-link {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
         }
 
         footer {
@@ -84,60 +96,46 @@
         footer .icon:hover {
             color: #007bff;
         }
-    /* Styles for mobile devices */
-@media (max-width: 768px) {
-    .content-container {
-        padding: 15px;
-    }
 
-    .profile-section img {
-        width: 120px;
-        height: 120px;
-    }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1.title {
+                font-size: 24px;
+            }
 
-    .profile-section h2 {
-        font-size: 18px;
-    }
+            .pdf-viewer {
+                width: 100%;
+                height: 500px; /* Adjusted height for mobile */
+            }
 
-    .profile-section p {
-        font-size: 14px;
-    }
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 10px 0;
+            }
 
-    h1.title {
-        font-size: 24px;
-    }
+            .navbar .nav-link {
+                font-size: 14px;
+                margin: 5px 10px;
+                padding: 8px 12px;
+            }
 
-    footer p {
-        font-size: 12px;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 10px 0;
-    }
-
-    
-    .navbar .nav-link {
-            text-decoration: none;
-            font-size: 15px;
-            color: #f9fafb;
-            margin: 0 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            footer .icon {
+                margin: 0 5px;
+            }
         }
 
-        #pdf-container {
-        height: 400px;
-    }
-}
+        @media (max-width: 480px) {
+            .pdf-viewer {
+                height: 350px; /* Further reduced height for smaller screens */
+            }
 
+            h1.title {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
-
 
 <body>
     <!-- Navbar -->
@@ -146,35 +144,11 @@
     <!-- CV Content -->
     <div class="pdf-container">
         <h1 class="title">Curriculum Vitae</h1>
-        <iframe src="files/CV_Cheon_241208.pdf" width="80%" height="800px"></iframe>
-        <p>
+        <iframe src="files/CV_Cheon_241208.pdf" class="pdf-viewer" allowfullscreen></iframe>
+        <div class="download-link">
             <a href="files/CV_Cheon_241208.pdf" download="CV_Cheon_241208.pdf" class="nav-link">Download CV</a>
-        </p>
+        </div>
     </div>
-
-    <script>
-        const url = 'files/CV_Cheon_241208.pdf'; // Path to your PDF file
-        const container = document.getElementById('pdf-container');
-    
-        const pdfjsLib = window['pdfjs-dist/build/pdf'];
-    
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
-    
-        pdfjsLib.getDocument(url).promise.then(function (pdf) {
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                pdf.getPage(pageNum).then(function (page) {
-                    const viewport = page.getViewport({ scale: 1.5 });
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-    
-                    page.render({ canvasContext: context, viewport: viewport });
-                    container.appendChild(canvas);
-                });
-            }
-        });
-    </script>
 
     <!-- Footer -->
     <footer>
@@ -196,27 +170,6 @@
                 document.getElementById('navbar-container').innerHTML = data;
             })
             .catch(error => console.error('Error loading navbar:', error));
-    
-            // PDF.js Viewer Configuration
-     const pdfPath = 'files/CV_Cheon_241208.pdf';
-        const pdfViewer = document.getElementById('pdf-viewer');
-
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
-
-        pdfjsLib.getDocument(pdfPath).promise.then(pdf => {
-            pdf.getPage(1).then(page => {
-                const viewport = page.getViewport({ scale: 1.5 });
-                pdfViewer.width = viewport.width;
-                pdfViewer.height = viewport.height;
-
-                const renderContext = {
-                    canvasContext: pdfViewer.getContext('2d'),
-                    viewport: viewport
-                };
-
-                page.render(renderContext);
-            });
-        });
     </script>
 </body>
 
