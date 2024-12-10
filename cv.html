@@ -149,6 +149,29 @@
         </p>
     </div>
 
+    <script>
+        const pdfUrl = 'files/CV_Cheon_241208.pdf';
+    
+        const renderPDF = async () => {
+            const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+            const container = document.getElementById('pdf-container');
+    
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const viewport = page.getViewport({ scale: 1 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                container.appendChild(canvas);
+    
+                await page.render({ canvasContext: context, viewport }).promise;
+            }
+        };
+    
+        renderPDF();
+    </script>
+
     <!-- Footer -->
     <footer>
         <p>
