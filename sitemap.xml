@@ -8,31 +8,31 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://cheon-je.github.io/research.html</loc>
+        <loc>https://cheon-je.github.io/Blog/research.html</loc>
         <lastmod>2024-12-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cheon-je.github.io/publications.html</loc>
+        <loc>https://cheon-je.github.io/Blog/publications.html</loc>
         <lastmod>2024-12-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cheon-je.github.io/rcode.html</loc>
+        <loc>https://cheon-je.github.io/Blog/rcode.html</loc>
         <lastmod>2024-12-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://cheon-je.github.io/cv.html</loc>
+        <loc>https://cheon-je.github.io/Blog/cv.html</loc>
         <lastmod>2024-12-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://cheon-je.github.io/contact.html</loc>
+        <loc>https://cheon-je.github.io/Blog/contact.html</loc>
         <lastmod>2024-12-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
