@@ -61,15 +61,7 @@
             box-sizing: border-box;
         }
 
-        .pdf-viewer {
-            width: 80%;
-            height: 800px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
+        
         .download-link {
             display: block;
             margin-top: 15px;
@@ -96,7 +88,35 @@
         footer .icon:hover {
             color: #007bff;
         }
+/* PDF Viewer Styling */
+.pdf-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 900px; /* Limits max width */
+    padding: 10px;
+}
 
+.pdf-viewer {
+    width: 100%;  /* Full width but responsive */
+    height: 600px; /* Default height for large screens */
+    max-width: 80%;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design: Adjust for Mobile */
+@media (max-width: 768px) {
+    .pdf-viewer {
+        height: 400px; /* Smaller height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-viewer {
+        height: 300px; /* Even smaller for phones */
+    }
+}
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             h1.title {
