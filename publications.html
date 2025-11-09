@@ -5,34 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Jeong Eun Cheon</title>
+    <!-- Font Awesome & Roboto -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+
     <style>
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f9fc;
-            line-height: 1.6;
-        }
-
-        h1.title {
-            text-align: center;
-            font-size: 32px;
-            font-weight: 600;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.7;
             color: #1f2937;
-            margin-top: 20px;
-            margin-bottom: 30px;
         }
 
         .navbar {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black;
+            background-color: #1a1a1a;
             padding: 15px 0;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar .nav-link {
@@ -43,202 +41,667 @@
             padding: 10px 15px;
             border-radius: 5px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .navbar .nav-link:hover {
             color: black;
             background-color: white;
+            transform: translateY(-2px);
         }
 
-        .content-container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .publications-list h2 {
-            font-size: 20px;
-            color: #2d3748;
+        .title {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
             margin-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 5px;
+            color: #111827;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .publications-list p {
-            margin-bottom: 15px;
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
             font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .info-box strong {
+            color: #667eea;
+        }
+
+        .section-header {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-header i {
+            color: #667eea;
+        }
+
+        .pub-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .pub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15);
+            border-color: #667eea;
+        }
+
+        .pub-year {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .pub-year.in-press {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .pub-authors {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .pub-authors strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .pub-title {
+            font-size: 16.5px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .pub-journal {
+            font-style: italic;
+            color: #6b7280;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background-color: #f3f4f6;
             color: #4b5563;
-        }
-
-        .publications-list a {
-            color: #3182ce;
             text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
             font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
         }
 
-        .publications-list a:hover {
-            text-decoration: underline;
+        .pub-link:hover {
+            background-color: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
         }
 
+        .pub-link.pdf {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+
+        .pub-link.pdf:hover {
+            background-color: #dc2626;
+            color: white;
+        }
+
+        .pub-link i {
+            font-size: 14px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
 
         footer {
             text-align: center;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            background-color: #f8f9fa;
-            padding: 15px 0;
-            border-top: 1px solid #ddd;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
         }
+
         footer .icon {
-            margin: 0 10px;
-            color: #f9fafb;
-            transition: color 0.3s ease;
+            margin: 0 12px;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
         }
 
         footer .icon:hover {
-            color: #60a5fa;
+            color: #667eea;
+            transform: translateY(-3px);
         }
- /* Styles for mobile devices */
-@media (max-width: 768px) {
-    .content-container {
-        padding: 15px;
-    }
 
-    .profile-section img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .profile-section h2 {
-        font-size: 18px;
-    }
-
-    .profile-section p {
-        font-size: 14px;
-    }
-
-    h1.title {
-        font-size: 24px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 10px 0;
-    }
-
-    
-    .navbar .nav-link {
-            text-decoration: none;
-            font-size: 15px;
-            color: #f9fafb;
-            margin: 0 10px;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+        footer p {
+            margin: 10px 0;
         }
-}
 
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            .title {
+                font-size: 32px;
+            }
+
+            .section-header {
+                font-size: 24px;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+
+            .navbar .nav-link {
+                font-size: 14px;
+                margin: 5px 10px;
+                padding: 8px 12px;
+            }
+
+            .pub-card {
+                padding: 18px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pub-card {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSQQZJE45F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XSQQZJE45F');
+    </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSQQZJE45F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-XSQQZJE45F');
-</script>
 <body>
-    <!-- Navbar -->
-    <div id="navbar-container"></div>
 
-    <!-- Publications Content -->
-    <div class="content-container">
+    <div class="navbar">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="cv.html">CV</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+
+    <div class="container">
         <h1 class="title">Publications</h1>
+        <p class="subtitle">Research contributions in social psychology, relationships, and human behavior</p>
 
-        <p><strong>The PDFs are accessible solely for research purposes and should not be shared for commercial endeavors.</strong></p>
-        <div style="font-style: italic;">*Shared first authorship.</div>
+        <div class="info-box">
+            <strong><i class="fas fa-info-circle"></i> Note:</strong> The PDFs are accessible solely for research purposes and should not be shared for commercial endeavors.
+            <br>
+            <em>*Shared first authorship.</em>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Total Publications</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">17</div>
+                <div class="stat-label">English Publications</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Korean Publications</div>
+            </div>
+        </div>
 
         <div class="publications-list">
-            <h2>Publications in English</h2>
+            <h2 class="section-header">
+                <i class="fas fa-globe"></i>
+                Publications in English
+            </h2>
 
-            <p>
-                <strong>Cheon, J. E.</strong>, & Kim, Y-H. (in press). 
-                Compensatory Effects of Affectionate Communication in Marriages with Infrequent Sexual Activity. 
-                <em>Archives of Sexual Behavior.</em><p>
+            <div class="pub-card">
+                <span class="pub-year in-press">In Press</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, & Kim, Y-H.
+                </div>
+                <div class="pub-title">
+                    Compensatory Effects of Affectionate Communication in Marriages with Infrequent Sexual Activity
+                </div>
+                <div class="pub-journal">
+                    Archives of Sexual Behavior
+                </div>
+            </div>
 
-                    <p>
-                        Eastwick, P. W., Sparks, J., Finkel, E., Meza, E. M., Adamkovic, M., Adu, P., ... 
-                        <strong>Cheon, J. E.</strong>, ... & Coles, N. A. (2025). 
-                        A worldwide test of the predictive validity of ideal partner preference-matching. 
-                        <em>Journal of Personality and Social Psychology.</em> 128(1), 123–146.  
-                        <a href="https://doi.org/10.1037/pspp0000524" target="_blank">https://doi.org/10.1037/pspp0000524</a>
-                    </p>
-                
-                    <p>
-                        Jeong, J., Seo, M., Park, H. G., <strong>Cheon, J. E.</strong>, Rice, K. G., & Kim, Y-H. (2025). 
-                        Actor–Partner Effects of Perfectionism on Marital Satisfaction: Self-Disclosure as an Interpersonal Mechanism. 
-                        <em>Family Relations</em>, 74(4), 1441–1456.  
-                        <a href="https://doi.org/10.1111/fare.13159" target="_blank">https://doi.org/10.1111/fare.13159</a>
-                    </p>
-                
-                    <p>
-                        Kim, S. Y., <strong>Cheon, J. E.</strong>, & Kim, Y-H. (2025). 
-                        A Cross-Cultural Examination of Blatant and Subtle Dehumanization of Autistic People. 
-                        <em>Journal of Autism and Developmental Disorders</em>, 55(2), 678–694.  
-                        <a href="https://doi.org/10.1007/s10803-023-06217-x" target="_blank">https://doi.org/10.1007/s10803-023-06217-x</a>
-                    </p>
+            <div class="pub-card">
+                <span class="pub-year">2025</span>
+                <div class="pub-authors">
+                    Eastwick, P. W., Sparks, J., Finkel, E., Meza, E. M., Adamkovic, M., Adu, P., ... <strong>Cheon, J. E.</strong>, ... & Coles, N. A.
+                </div>
+                <div class="pub-title">
+                    A worldwide test of the predictive validity of ideal partner preference-matching
+                </div>
+                <div class="pub-journal">
+                    Journal of Personality and Social Psychology, 128(1), 123–146
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1037/pspp0000524" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1037/pspp0000524
+                    </a>
+                </div>
+            </div>
 
-            <p> Chae, S. W., <strong>Cheon, J. E.</strong>, Latner, L., & Kim, Y. H. (in press). Translation and Validation Study of the Korean Self-Compassion Scale. <em>Mindfulness.</em> <a href="https://doi.org/10.1007/s12671-024-02453-z" target="_blank">DOI: 10.1007/s12671-024-02453-z</a> [<a href="manuscripts/2024_mindfulness_SC.pdf">PDF</a>]</p>
+            <div class="pub-card">
+                <span class="pub-year">2025</span>
+                <div class="pub-authors">
+                    Jeong, J., Seo, M., Park, H. G., <strong>Cheon, J. E.</strong>, Rice, K. G., & Kim, Y-H.
+                </div>
+                <div class="pub-title">
+                    Actor–Partner Effects of Perfectionism on Marital Satisfaction: Self-Disclosure as an Interpersonal Mechanism
+                </div>
+                <div class="pub-journal">
+                    Family Relations, 74(4), 1441–1456
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1111/fare.13159" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1111/fare.13159
+                    </a>
+                </div>
+            </div>
 
-            <p> <strong>Cheon, J. E.</strong>, Yang, H., Kang, I., & Kim, Y. H. (2024). Totality Model of Neuroticism: The Sum of Spousal Neuroticism and Marital Satisfaction. <em>Personality and Individual Differences.</em> <a href="https://doi.org/10.1016/j.paid.2024.112726" target="_blank">DOI: 10.1016/j.paid.2024.112726</a> [<a href="manuscripts/2024_PAID_totality.pdf">PDF</a>]</p>
-        
-            <p> Lee, H. E., Kim, J. J., <strong>Cheon, J. E.</strong>, & Kim, Y. H. (2024). Multifaceted Effects of Promotion Focus on Marital Outcomes under Mate Value Discrepancy. <em>Family Relations, 73(2),</em> 1296–1310. <a href="https://doi.org/10.1111/fare.12891" target="_blank">DOI: 10.1111/fare.12891</a> [<a href="manuscripts/2024_promotion.pdf">PDF</a>]</p>
-        
-            <p> <strong>Cheon, J. E.</strong>, Kim, J. J., & Kim, Y. H. (2024). Wives with Long and High-Quality Hair Have More Frequent Sex. <em>Frontiers in Psychology, 14,</em> 1294660. <a href="https://doi.org/10.3389/fpsyg.2023.1294660" target="_blank">DOI: 10.3389/fpsyg.2023.1294660</a> [<a href="manuscripts/2024_hair.pdf">PDF</a>]</p>
-        
-            <p> Lee, A. Y., Park, H. G., <strong>Cheon, J. E.</strong>, Rice, K. G., & Kim, Y. H. (2024). Mediating Role of Social Skills in the Longitudinal Relationship Between Intrapersonal Perfectionism and Psychological Well-being of Preadolescents. <em>Journal of School Psychology, 102,</em> 101257. <a href="https://doi.org/10.1016/j.jsp.2023.101257" target="_blank">DOI: 10.1016/j.jsp.2023.101257</a> [<a href="manuscripts/2024_perfectionism.pdf">PDF</a>]</p>
-        
-            <p> <strong>Cheon, J. E.</strong>, & Kim, Y. H. (2024). Similarity as a Safe Haven: Similarity Leads to Satisfaction in Prevention Focus. <em>Journal of Social and Personal Relationships, 41(1),</em> 69–90. <a href="https://doi.org/10.1177/02654075231210851" target="_blank">DOI: 10.1177/02654075231210851</a> [<a href="manuscripts/2024_similarity.pdf">PDF</a>]</p>
-        
-            <p> Park, H. G., Suk, H. W., <strong>Cheon, J. E.</strong>, & Kim, Y. H. (2023). Darling, Come Lay with Me or Talk with Me: Perceived Mattering and the Complementary Association Between Sex and Communication Within Marital Relationships. <em>The Journal of Sex Research, 60(3),</em> 336–348. <a href="https://doi.org/10.1080/00224499.2021.2018393" target="_blank">DOI: 10.1080/00224499.2021.2018393</a> [<a href="manuscripts/2023_JSR_sexcomm.pdf">PDF</a>]</p>
-            
-            <p> Kim, S. Y.*, <strong>Cheon, J. E. *</strong>, Gillespie-Lynch, K., Bisson, J. B., & Kim, Y. H. (2023). Explicit Stigma and Implicit Biases Toward Autism in South Korea Versus the United States. <em>Autism. 27</em>(5), 1492–1507. <a href="https://doi.org/10.1177/13623613221140695" target="_blank">DOI: 10.1177/13623613221140695</a> [<a href="manuscripts/2023_Implicit_Stigma.pdf">PDF</a>]</p>
+            <div class="pub-card">
+                <span class="pub-year">2025</span>
+                <div class="pub-authors">
+                    Kim, S. Y., <strong>Cheon, J. E.</strong>, & Kim, Y-H.
+                </div>
+                <div class="pub-title">
+                    A Cross-Cultural Examination of Blatant and Subtle Dehumanization of Autistic People
+                </div>
+                <div class="pub-journal">
+                    Journal of Autism and Developmental Disorders, 55(2), 678–694
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1007/s10803-023-06217-x" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1007/s10803-023-06217-x
+                    </a>
+                </div>
+            </div>
 
-            <p> Kim, S. Y., <strong>Cheon, J. E.</strong>, Gillespie-Lynch, K., & Kim, Y. H. (2022). Is Autism Stigma Higher in South Korea Than the United States? Examining Cultural Tightness, Intergroup Bias, and Concerns About Heredity as Contributors to Heightened Autism Stigma. <em>Autism, 26(2),</em> 460–472. <a href="https://doi.org/10.1177/13623613211029520" target="_blank">DOI: 10.1177/13623613211029520</a> [<a href="manuscripts/2022_autism.pdf">PDF</a>]</p>
+            <div class="pub-card">
+                <span class="pub-year in-press">In Press</span>
+                <div class="pub-authors">
+                    Chae, S. W., <strong>Cheon, J. E.</strong>, Latner, L., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Translation and Validation Study of the Korean Self-Compassion Scale
+                </div>
+                <div class="pub-journal">
+                    Mindfulness
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1007/s12671-024-02453-z" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1007/s12671-024-02453-z
+                    </a>
+                    <a href="manuscripts/2024_mindfulness_SC.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
-            <p> <strong>Cheon, J. E.</strong>, Nam, Y., Kim, K. J., Lee, H. I., Park, H. G., & Kim, Y. H. (2021). Cultural Variability in the Attribute Framing Effect. <em>Frontiers in Psychology, 5995.</em> <a href="https://doi.org/10.3389/fpsyg.2021.754265" target="_blank">DOI: 10.3389/fpsyg.2021.754265</a> [<a href="manuscripts/2021_frontiers_framingeffect.pdf">PDF</a>]</p>
+            <div class="pub-card">
+                <span class="pub-year">2024</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, Yang, H., Kang, I., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Totality Model of Neuroticism: The Sum of Spousal Neuroticism and Marital Satisfaction
+                </div>
+                <div class="pub-journal">
+                    Personality and Individual Differences
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1016/j.paid.2024.112726" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1016/j.paid.2024.112726
+                    </a>
+                    <a href="manuscripts/2024_PAID_totality.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
+            <div class="pub-card">
+                <span class="pub-year">2024</span>
+                <div class="pub-authors">
+                    Lee, H. E., Kim, J. J., <strong>Cheon, J. E.</strong>, & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Multifaceted Effects of Promotion Focus on Marital Outcomes under Mate Value Discrepancy
+                </div>
+                <div class="pub-journal">
+                    Family Relations, 73(2), 1296–1310
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1111/fare.12891" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1111/fare.12891
+                    </a>
+                    <a href="manuscripts/2024_promotion.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
-            <h2>Publications in Korean</h2>
+            <div class="pub-card">
+                <span class="pub-year">2024</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, Kim, J. J., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Wives with Long and High-Quality Hair Have More Frequent Sex
+                </div>
+                <div class="pub-journal">
+                    Frontiers in Psychology, 14, 1294660
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.3389/fpsyg.2023.1294660" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.3389/fpsyg.2023.1294660
+                    </a>
+                    <a href="manuscripts/2024_hair.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
-            <p> Yang, H., & <strong>Cheon, J. E.</strong> (2022). Present and Future of Social Health: The Marital Relationship Perspective. <em>Present and Future of Social Health</em> (pp. 105–115). Yonsei University Press.</p>
+            <div class="pub-card">
+                <span class="pub-year">2024</span>
+                <div class="pub-authors">
+                    Lee, A. Y., Park, H. G., <strong>Cheon, J. E.</strong>, Rice, K. G., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Mediating Role of Social Skills in the Longitudinal Relationship Between Intrapersonal Perfectionism and Psychological Well-being of Preadolescents
+                </div>
+                <div class="pub-journal">
+                    Journal of School Psychology, 102, 101257
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1016/j.jsp.2023.101257" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1016/j.jsp.2023.101257
+                    </a>
+                    <a href="manuscripts/2024_perfectionism.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
-            <p> <strong>Cheon, J. E.</strong>, Ahn, U., & Park, H. G. (2021). Improving Marital Relationships Under Covid-19. <em>Social Health and Society after Covid-19</em> (pp. 29–40). Yonsei University Press.</p>
+            <div class="pub-card">
+                <span class="pub-year">2024</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Similarity as a Safe Haven: Similarity Leads to Satisfaction in Prevention Focus
+                </div>
+                <div class="pub-journal">
+                    Journal of Social and Personal Relationships, 41(1), 69–90
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1177/02654075231210851" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1177/02654075231210851
+                    </a>
+                    <a href="manuscripts/2024_similarity.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
-            <p> Kim, J. W., Lee, H. E., Yang, H. W., <strong>Cheon, J. E.</strong>, & Kim, Y. H. (2021). The Mediating Role of Emotional Suppression in the Relationship Between Spouse’s Neuroticism and Marital Well-Being. <em>Family and Culture, 33(2),</em> 89–123. <a href="https://doi.org/10.21478/family.33.2.202106.004" target="_blank">DOI: 10.21478/family.33.2.202106.004</a></p>
+            <div class="pub-card">
+                <span class="pub-year">2023</span>
+                <div class="pub-authors">
+                    Park, H. G., Suk, H. W., <strong>Cheon, J. E.</strong>, & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Darling, Come Lay with Me or Talk with Me: Perceived Mattering and the Complementary Association Between Sex and Communication Within Marital Relationships
+                </div>
+                <div class="pub-journal">
+                    The Journal of Sex Research, 60(3), 336–348
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1080/00224499.2021.2018393" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1080/00224499.2021.2018393
+                    </a>
+                    <a href="manuscripts/2023_JSR_sexcomm.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
+            <div class="pub-card">
+                <span class="pub-year">2023</span>
+                <div class="pub-authors">
+                    Kim, S. Y.*, <strong>Cheon, J. E.*</strong>, Gillespie-Lynch, K., Bisson, J. B., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Explicit Stigma and Implicit Biases Toward Autism in South Korea Versus the United States
+                </div>
+                <div class="pub-journal">
+                    Autism, 27(5), 1492–1507
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1177/13623613221140695" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1177/13623613221140695
+                    </a>
+                    <a href="manuscripts/2023_Implicit_Stigma.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
+            <div class="pub-card">
+                <span class="pub-year">2022</span>
+                <div class="pub-authors">
+                    Kim, S. Y., <strong>Cheon, J. E.</strong>, Gillespie-Lynch, K., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Is Autism Stigma Higher in South Korea Than the United States? Examining Cultural Tightness, Intergroup Bias, and Concerns About Heredity as Contributors to Heightened Autism Stigma
+                </div>
+                <div class="pub-journal">
+                    Autism, 26(2), 460–472
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.1177/13623613211029520" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.1177/13623613211029520
+                    </a>
+                    <a href="manuscripts/2022_autism.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
+            <div class="pub-card">
+                <span class="pub-year">2021</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, Nam, Y., Kim, K. J., Lee, H. I., Park, H. G., & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    Cultural Variability in the Attribute Framing Effect
+                </div>
+                <div class="pub-journal">
+                    Frontiers in Psychology, 5995
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.3389/fpsyg.2021.754265" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.3389/fpsyg.2021.754265
+                    </a>
+                    <a href="manuscripts/2021_frontiers_framingeffect.pdf" class="pub-link pdf">
+                        <i class="far fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
 
+            <h2 class="section-header">
+                <i class="fas fa-language"></i>
+                Publications in Korean
+            </h2>
+
+            <div class="pub-card">
+                <span class="pub-year">2022</span>
+                <div class="pub-authors">
+                    Yang, H., & <strong>Cheon, J. E.</strong>
+                </div>
+                <div class="pub-title">
+                    Present and Future of Social Health: The Marital Relationship Perspective
+                </div>
+                <div class="pub-journal">
+                    Present and Future of Social Health (pp. 105–115). Yonsei University Press
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <span class="pub-year">2021</span>
+                <div class="pub-authors">
+                    <strong>Cheon, J. E.</strong>, Ahn, U., & Park, H. G.
+                </div>
+                <div class="pub-title">
+                    Improving Marital Relationships Under Covid-19
+                </div>
+                <div class="pub-journal">
+                    Social Health and Society after Covid-19 (pp. 29–40). Yonsei University Press
+                </div>
+            </div>
+
+            <div class="pub-card">
+                <span class="pub-year">2021</span>
+                <div class="pub-authors">
+                    Kim, J. W., Lee, H. E., Yang, H. W., <strong>Cheon, J. E.</strong>, & Kim, Y. H.
+                </div>
+                <div class="pub-title">
+                    The Mediating Role of Emotional Suppression in the Relationship Between Spouse's Neuroticism and Marital Well-Being
+                </div>
+                <div class="pub-journal">
+                    Family and Culture, 33(2), 89–123
+                </div>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.21478/family.33.2.202106.004" target="_blank" class="pub-link">
+                        <i class="ai ai-doi"></i> https://doi.org/10.21478/family.33.2.202106.004
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>
+        <p style="margin-bottom: 20px;">
             <a href="https://github.com/cheon-je" target="_blank" class="fab fa-github icon"></a>
             <a href="https://osf.io/daeg2/" target="_blank" class="ai ai-osf icon"></a>
             <a href="https://www.researchgate.net/profile/Jeong-Eun-Cheon" target="_blank" class="fab fa-researchgate icon"></a>
@@ -248,15 +711,6 @@
         <p>&copy; 2024 Jeong Eun Cheon. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Load Navbar from external file
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
-    </script>
 </body>
 
 </html>
