@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
-<!-- www.check-domains.com sitemap generator -->
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-   <loc>https://cheon-je.github.io/Blog/</loc>
-   <lastmod>2025-01-18T05:29:59+00:00</lastmod>
+   <loc>https://cheon-je.github.io/</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
    <changefreq>monthly</changefreq>
    <priority>1.0000</priority>
 </url>
+
+<url>
+   <loc>https://cheon-je.github.io/research.html</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.8000</priority>
+</url>
+
+<url>
+   <loc>https://cheon-je.github.io/publications.html</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.9000</priority>
+</url>
+
+<url>
+   <loc>https://cheon-je.github.io/rcode.html</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+   <changefreq>monthly</changefreq>
+   <priority>0.7000</priority>
+</url>
+
+<url>
+   <loc>https://cheon-je.github.io/cv.html</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+   <changefreq>yearly</changefreq>
+   <priority>0.7000</priority>
+</url>
+
+<url>
+   <loc>https://cheon-je.github.io/contact.html</loc>
+   <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+   <changefreq>yearly</changefreq>
+   <priority>0.6000</priority>
+</url>
+
 </urlset>
