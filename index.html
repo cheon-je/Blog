@@ -82,14 +82,19 @@
             height: fit-content;
         }
 
+        .profile-img-wrap {
+            width: 140px;
+            margin: 0 auto 1.6rem;
+        }
+
         .profile-img {
             width: 100%;
-            max-width: 200px;
-            border-radius: 3px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 4px;
             display: block;
-            margin-bottom: 1.6rem;
             border: 1px solid var(--rule);
-            filter: grayscale(8%) contrast(1.02);
+            filter: saturate(0.85) contrast(1.02) brightness(1.02);
         }
 
         .name {
@@ -327,8 +332,7 @@
                 align-items: center;
                 text-align: center;
             }
-            .profile-img {
-                max-width: 150px;
+            .profile-img-wrap {
                 margin-bottom: 1rem;
             }
             .name { font-size: 1.6rem; }
@@ -338,7 +342,6 @@
         }
 
         @media (max-width: 480px) {
-            .profile-img { max-width: 120px; }
             .stats-strip { max-width: 100%; }
         }
 
@@ -373,11 +376,13 @@
 
         <!-- ── SIDEBAR ── -->
         <aside class="sidebar">
-            <img src="image/202411_2.jpg" alt="Jeong Eun Cheon" class="profile-img">
+            <div class="profile-img-wrap">
+                <img src="image/202411_2.jpg" alt="Jeong Eun Cheon" class="profile-img">
+            </div>
 
             <div>
                 <h1 class="name">Jeong Eun<br>Cheon</h1>
-                <p class="role">Research Professor<br>Barun ICT Research Center<br>Yonsei University</p>
+                <p class="role">Postdoctoral Fellow<br>Dept. of Management & Marketing<br>The Hong Kong Polytechnic University</p>
 
                 <div class="social-row">
                     <a href="https://scholar.google.com/citations?user=AfNzaYEAAAAJ" target="_blank" class="social-btn">
@@ -451,17 +456,24 @@
                 <h2 class="section-head">Academic Appointments</h2>
 
                 <div class="entry">
-                    <div class="e-year">2025–Pres.</div>
+                    <div class="e-year">Jun 2026–Pres.</div>
                     <div>
-                        <div class="e-title">Research Professor</div>
-                        <div class="e-detail">Barun ICT Research Center, Yonsei University</div>
+                        <div class="e-title">Postdoctoral Fellow</div>
+                        <div class="e-detail">Department of Management and Marketing, Faculty of Business, The Hong Kong Polytechnic University, Hong Kong</div>
                     </div>
                 </div>
                 <div class="entry">
-                    <div class="e-year">2024–2025</div>
+                    <div class="e-year">Sep 2025–<br>May 2026</div>
+                    <div>
+                        <div class="e-title">Research Professor</div>
+                        <div class="e-detail">Barun ICT Research Center, Yonsei University, South Korea</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="e-year">Mar 2024–<br>Feb 2025</div>
                     <div>
                         <div class="e-title">Lecturer</div>
-                        <div class="e-detail">Department of Psychology, Yonsei University</div>
+                        <div class="e-detail">Department of Psychology, Yonsei University, South Korea</div>
                     </div>
                 </div>
             </section>
@@ -473,21 +485,21 @@
                     <div class="e-year">2021–2025</div>
                     <div>
                         <div class="e-title">Ph.D. in Psychology</div>
-                        <div class="e-detail">Yonsei University</div>
+                        <div class="e-detail">Yonsei University, South Korea</div>
                     </div>
                 </div>
                 <div class="entry">
                     <div class="e-year">2018–2021</div>
                     <div>
                         <div class="e-title">M.A. in Psychology</div>
-                        <div class="e-detail">Yonsei University</div>
+                        <div class="e-detail">Yonsei University, South Korea</div>
                     </div>
                 </div>
                 <div class="entry">
                     <div class="e-year">2013–2016</div>
                     <div>
                         <div class="e-title">B.A. in Psychology</div>
-                        <div class="e-detail">Minor: Sociology — Emory University</div>
+                        <div class="e-detail">Minor: Sociology — Emory University, USA</div>
                     </div>
                 </div>
             </section>
@@ -506,7 +518,7 @@
                     <div class="e-year">2023–2025</div>
                     <div>
                         <div class="e-title">Special Research Grant <span class="amt">$5,185 × 2</span></div>
-                        <div class="e-detail">Yonsei University</div>
+                        <div class="e-detail">Yonsei University, South Korea</div>
                     </div>
                 </div>
                 <div class="entry">
@@ -520,14 +532,14 @@
                     <div class="e-year">2024</div>
                     <div>
                         <div class="e-title">Merit Academic Paper Award</div>
-                        <div class="e-detail">Yonsei University</div>
+                        <div class="e-detail">Yonsei University, South Korea</div>
                     </div>
                 </div>
                 <div class="entry">
                     <div class="e-year">2022</div>
                     <div>
                         <div class="e-title">Excellent Academic Paper Award</div>
-                        <div class="e-detail">Yonsei University</div>
+                        <div class="e-detail">Yonsei University, South Korea</div>
                     </div>
                 </div>
                 <div class="entry">
